@@ -1,0 +1,54 @@
+.button {
+  position: fixed;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: 80;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-base);
+  box-shadow: var(--shadow-gold);
+  animation: bounce-once 1.2s var(--ease-standard) 2.2s 1;
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.button:hover {
+  transform: translateY(-3px) scale(1.04);
+}
+
+@keyframes bounce-once {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .button {
+    right: var(--space-md);
+    bottom: var(--space-md);
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    animation: none;
+  }
+}

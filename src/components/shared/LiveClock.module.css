@@ -1,0 +1,23 @@
+.clock {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  color: var(--color-surface);
+  opacity: 0.85;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  animation: pulse-soft 2.4s var(--ease-standard) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+  }
+}

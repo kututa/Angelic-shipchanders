@@ -1,0 +1,74 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition: background var(--duration-base) var(--ease-standard),
+    height var(--duration-base) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard);
+}
+
+.header.scrolled {
+  height: 64px;
+  background: var(--color-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  color: var(--color-white);
+}
+
+.wordmarkSub {
+  font-size: 0.65em;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  color: var(--color-gold);
+}
+
+.menuButton {
+  position: relative;
+  z-index: 101;
+  width: 36px;
+  height: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2px 0;
+}
+
+.menuButton span {
+  display: block;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: 2px;
+  transition: transform var(--duration-fast) var(--ease-standard),
+    opacity var(--duration-fast) var(--ease-standard);
+}
+
+.menuButtonOpen span:nth-child(1) {
+  transform: translateY(13px) rotate(45deg);
+}
+.menuButtonOpen span:nth-child(2) {
+  opacity: 0;
+}
+.menuButtonOpen span:nth-child(3) {
+  transform: translateY(-13px) rotate(-45deg);
+}

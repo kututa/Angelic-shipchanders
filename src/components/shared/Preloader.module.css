@@ -1,0 +1,51 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  background: var(--color-base);
+  color: var(--color-gold);
+  animation: hold-then-fade 1.4s var(--ease-standard) forwards;
+}
+
+.ship {
+  width: 140px;
+  height: auto;
+}
+
+.line {
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  animation: draw-line 1s var(--ease-standard) forwards;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  color: var(--color-surface);
+  opacity: 0;
+  animation: fade-in var(--duration-slow) var(--ease-standard) 0.6s forwards;
+}
+
+@keyframes hold-then-fade {
+  0%,
+  78% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader {
+    display: none;
+  }
+}
